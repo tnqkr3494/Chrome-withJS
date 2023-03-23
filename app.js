@@ -66,3 +66,59 @@ const player2 = {
 };
 
 player2.sayHello();
+
+//return문
+
+const calculator = {
+  plus: function (a, b) {
+    return a + b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  times: function (a, b) {
+    return a * b;
+  },
+  divide: function (a, b) {
+    return a / b;
+  },
+  power: function (a, b) {
+    return a ** b;
+  },
+};
+
+console.log(calculator.power(2, 4));
+
+//조건문
+
+const age = parseInt(prompt("How old are you?")); //parseInt : 문자를 숫자로 숫자를 문자로 바꿔주는 함수, prompt : scanf와 유사
+
+console.log(typeof age); //typeof라는 키워드를 사용해 변수의 type을 확인할 수 있다.
+
+if (isNaN(age) || age < 0) {
+  console.log("Please write a real positive number!");
+} else if (age < 18) {
+  console.log("You are too young");
+} else if (age >= 18 && age <= 50) {
+  console.log("You can drink");
+} else {
+  console.log("You can't drink");
+}
+
+/*
+
+다른 언어에서 == 을 쓰다가 === 를 사용하여 찾아보니
+JS에서만 사용하는 연산자이며
+== 은 값만을 비교하고
+=== 은 유형도 비교하여 === 를 주로 사용하는걸 추천한다고 하네요.
+ex)
+0 == false ---> true
+0 === false ---> false
+
+배열형 : 배열의 데이터 값이 같더라도 배열을 할당할때, 각 변수는 각 메모리의 주소를 참조한다. 참조하는 메모리의 주소가 다르기 때문에 두 배열는 같지 않다.
+var a = [1,2,3];
+var b = [1,2,3];
+console.log(a == b); // false
+console.log(a === b); // false
+
+*/
