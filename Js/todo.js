@@ -65,6 +65,6 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos) {
   const parsedToDos = JSON.parse(savedToDos); //string을 array로 변경하는 코드
-  toDos = parsedToDos;
+  toDos = parsedToDos; //새로고침 했을때 toDos배열값이 초기화
   parsedToDos.forEach(paintToDo); //forEach : array함수로써 배열값 하나당 한번씩 실행해주는 코드
 }
