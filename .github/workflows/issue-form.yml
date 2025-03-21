@@ -12,6 +12,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JIRA_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_URL: ${{ secrets.JIRA_URL }}
         uses: actions/github-script@v6
         with:
           script: |
@@ -27,6 +28,6 @@ jobs:
                 Priority: ${issue.fields.priority?.name || 'Not set'}
                 Status: ${issue.fields.status.name}
                 
-                [View in Jira](${secrets.JIRA_URL}/browse/${issue.key})
+                [View in Jira](${process.env.JIRA_URL}/browse/${issue.key})
               `
             });
